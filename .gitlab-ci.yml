@@ -20,11 +20,11 @@ after_script:
   - BUILD_IMAGE=${CI_REGISTRY}/${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}/${IMAGE_NAME}-${CI_COMMIT_SHORT_SHA}
 
 .set-build-args-for-nginx: &set-build-args-for-nginx
-  - BUILD_ARGS=" --build-arg BASE_IMAGE=\"${CI_REGISTRY}/${CI_PROJECT_NAMESPACE}/docker-php-nginx/${BASE_IMAGE}\""
+  - BUILD_ARGS=" --build-arg BASE_IMAGE=\"${CI_REGISTRY}/${CI_PROJECT_NAMESPACE}/php-nginx/${BASE_IMAGE}\""
   - BUILD_ARGS="${BUILD_ARGS} --build-arg CONFIGS_PATH=\"configs-nginx\""
 
 .set-build-args-for-apache: &set-build-args-for-apache
-  - BUILD_ARGS=" --build-arg BASE_IMAGE=\"${CI_REGISTRY}/${CI_PROJECT_NAMESPACE}/docker-php-apache/${BASE_IMAGE}\""
+  - BUILD_ARGS=" --build-arg BASE_IMAGE=\"${CI_REGISTRY}/${CI_PROJECT_NAMESPACE}/php-apache/${BASE_IMAGE}\""
   - BUILD_ARGS="${BUILD_ARGS} --build-arg CONFIGS_PATH=\"configs-apache\""
 
 .build-image: &build-image
